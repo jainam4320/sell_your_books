@@ -1,0 +1,8 @@
+﻿Connection String To Be Replaced In Web.Config File
+
+
+For Local Host 
+<add name="DefaultConnection" connectionString="Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=&quot;|DataDirectory|\aspnet-Sell Your Books-20191115030355.mdf&quot;;Initial Catalog=&quot;aspnet-Sell Your Books-20191115030355&quot;;Integrated Security=True" providerName="System.Data.SqlClient" />
+
+For Azure Web Hosting
+<add name="DefaultConnection" connectionString="Data Source=tcp:sellyourbooksdbserver.database.windows.net,1433;Initial Catalog=&quot;SellYourBooks_db;User ID=jainam4320@sellyourbooksdbserver;Password=432000Book&quot;;Integrated Security=True" providerName="System.Data.SqlClient" />
