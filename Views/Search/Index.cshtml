@@ -1,0 +1,70 @@
+﻿@model IEnumerable<Sell_Your_Books.Models.BookInfo>
+
+@{
+    ViewBag.Title = "Search";
+}
+
+<h2>Search Books</h2>
+
+<div class="container">
+    <div class="form-group">
+        <div class="input-group">
+            <input type="text" name="Search" id="Search" placeholder="Search Books" class="form-control" />
+        </div>
+
+    </div>
+</div>
+
+
+<br />
+<div class="container" style="width:100%">
+    @foreach (var item in Model)
+    {
+
+    <div class="col-sm-4" style="padding:10px;">
+        <div class="card Search" style="min-height:910px;">
+            <img src="~/Content/@item.img" alt="Book Image" height="670px" width="100%">
+            <div class="container">
+                <h2 class="card-title" style="max-width:33%;">
+                    @Html.DisplayFor(modelItem => item.Title)
+                </h2>
+                <h4 class="card-text">
+                    @Html.DisplayNameFor(model => model.Author) :
+                    @Html.DisplayFor(modelItem => item.Author)
+                </h4>
+                <h4 class="card-text">
+                    @Html.DisplayNameFor(model => model.Price) :
+                    @Html.DisplayFor(modelItem => item.Price)
+                </h4>
+                <p class="card-text">
+                    <a href="~/Home/Details/@item.BookId" class="btn btn-primary btn-lg">More Info &raquo; </a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    }
+</div>
+
+
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        function Contains(text_one, text_two) {
+            if (text_one.indexOf(text_two) != -1)
+                return true;
+        }
+        $("#Search").keyup(function () {
+            var searchText = $("#Search").val().toLowerCase();
+            $(".Search").each(function () {
+                if (!Contains($(this).text().toLowerCase(), searchText)) {
+                    $(this).hide();
+                }
+                else {
+                    $(this).show();
+                }
+            })
+        })
+    })
+</script>

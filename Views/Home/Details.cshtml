@@ -1,0 +1,66 @@
+﻿@model Sell_Your_Books.Models.BookInfo
+
+@{
+    ViewBag.Title = "Book Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BookInfo</h4>
+    <hr />
+
+    <dl class="dl-horizontal">
+
+
+        <dd>
+            <img src="~/Content/@Model.img" alt="Book`s Image" height="100%" width="100%" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Author)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Author)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.isNew)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isNew)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Condition)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Condition)
+        </dd>
+
+        <p><a href="~/Home/ContactSeller/@Model.BookId" class="btn btn-primary btn-lg"> Contact Seller &raquo; </a></p>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>
